@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imagem com Link e Geolocalização</title>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocalização não é suportada pelo seu navegador.");
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+            // Aqui você pode enviar esses dados para o servidor ou processá-los como desejar
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="getLocation();">
+        <img src="https://via.placeholder.com/150" alt="Clique na imagem para compartilhar sua localização">
+    </a>
+</body>
+</html>
